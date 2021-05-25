@@ -39,22 +39,13 @@ class DataBase():
         self.db.commit()
     def delete(self, num):
         cur = self.db.cursor()
-        str = "DELETE FROM wordtable WHERE noun = '{}'".format(num)
+        str = "DELETE FROM wordtable WHERE noun = {}".format(num)
         cur.execute(str)
-        print(num, "刪除成功")
+        print(v_a, v_n, v_p, v_v, "添加成功")
         self.db.commit()
-
-    def Ndelete(self):
-        cur = self.db.cursor()
-        str = "DELETE FROM wordtable WHERE (noun, place) IN(SELECT noun, place FROM wordtable GROUP BY noun, place HAVING COUNT(*) > 1)"
-        cur.execute(str)
-        print("重複值刪除成功")
-        self.db.commit()
-        
     def close(self, do):
         self.db.cursor().execute(do)
         self.db.commit()
-
 
 # #t.creat_table()
 # t = DataBase()
@@ -62,8 +53,7 @@ class DataBase():
 # a=t.show_all()
 # print(a)
 # print
-# t = DataBase()
-# t.Ndelete()
+
 # t.insert('d','dd','ddd')
 # t.delete(3)
 # t.show_all()

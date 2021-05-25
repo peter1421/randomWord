@@ -48,7 +48,7 @@ class DataBase():
         cur = self.db.cursor()
         str = "DELETE FROM wordtable WHERE (noun, place) IN(SELECT noun, place FROM wordtable GROUP BY noun, place HAVING COUNT(*) > 1)"
         cur.execute(str)
-        print("重複值刪除成功")
+        print(num, "重複值刪除成功")
         self.db.commit()
         
     def close(self, do):

@@ -25,7 +25,7 @@ def index_add_data():
             print("資料正在存入資料庫")
             t = D.DataBase()
             t.insert(data[0],data[1],data[2],data[3])
-            a = D.DataBase()
+            a = DataBase()
             a.Ndelete()
             return render_template("add_data.html", data=data)
     except:
