@@ -34,21 +34,25 @@ class DataBase():
         cur = self.db.cursor()
         str = "INSERT INTO wordtable(adjective, noun, place, verb) VALUES('{}', '{}', '{}', '{}')".format(
             v_a, v_n, v_p, v_v)
-        self.cursor.close(str)
-        print(v_a,v_n,v_p,v_v,"添加成功")
-    # def delete(self, num):
-    #     cur = self.db.cursor()
-    #     str = "DELETE FROM wordtable WHERE id = {}".format(num)
-    #     cur.execute(str)
+        cur.execute(str)
+        
+        
+        print("添加成功")
+
+    def delete(self, num):
+        cur = self.db.cursor()
+        str = "DELETE FROM wordtable WHERE id = {}".format(num)
+        cur.execute(str)
+
     def close(self, do):
         self.db.cursor().execute(do)
         self.db.commit()
 
-# t = DataBase()
-# #t.creat_table()
-# #t.insert('難過的','小明','房間','吃飯')
-# a=t.show_all()
-# print(a)
+#t.creat_table()
+#t.insert('難過的','小明','房間','吃飯')
+t = DataBase()
+a=t.show_all()
+print(a)
 # print
 
 # t.insert('d','dd','ddd')

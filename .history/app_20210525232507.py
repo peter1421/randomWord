@@ -8,6 +8,8 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+if __name__=="__main__":
+    app.run(port=3000)
 
 @app.route("/add_data")
 def index_add_data():
@@ -39,9 +41,6 @@ def index_show_data():
         ls.append(random.randint(0, len(AllData)-1))
     print(ls)
     return render_template("data_show.html",data=AllData,ls=ls)
-
-if __name__=="__main__":
-    app.run(port=3000)
 
 
 # @app.route("/cal")
