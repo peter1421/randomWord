@@ -8,8 +8,8 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-if __name__=="__main__":
-    app.run(port=3000)
+if __name__=="__main__"
+app.run(port=3000)
 
 # @app.route("/add_data")
 # def index_add_data():
