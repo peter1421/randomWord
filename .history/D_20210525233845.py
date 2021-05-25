@@ -36,7 +36,7 @@ class DataBase():
             v_a, v_n, v_p, v_v)
         cur.execute(str)
         print(v_a,v_n,v_p,v_v,"添加成功")
-        self.db.commit()
+        cur.commit()
     # def delete(self, num):
     #     cur = self.db.cursor()
     #     str = "DELETE FROM wordtable WHERE id = {}".format(num)
@@ -45,11 +45,11 @@ class DataBase():
         self.db.cursor().execute(do)
         self.db.commit()
 
+t = DataBase()
 # #t.creat_table()
-# t = DataBase()
-# # t.insert('難過的','小明','房間','吃飯')
-# a=t.show_all()
-# print(a)
+t.insert('難過的','小明','房間','吃飯')
+a=t.show_all()
+print(a)
 # print
 
 # t.insert('d','dd','ddd')

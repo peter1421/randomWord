@@ -22,7 +22,7 @@ def index_add_data():
                 print("NULL")
                 break
         if(op==1):
-            print("資料正在存入資料庫")
+            print("ok正在存入資料庫")
             t = D.DataBase()
             t.insert(data[0],data[1],data[2],data[3])
             return render_template("add_data.html", data=data)

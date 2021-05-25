@@ -47,7 +47,7 @@ class DataBase():
 
 # #t.creat_table()
 # t = DataBase()
-# # t.insert('難過的','小明','房間','吃飯')
+# t.insert('難過的','小明','房間','吃飯')
 # a=t.show_all()
 # print(a)
 # print

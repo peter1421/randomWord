@@ -15,14 +15,13 @@ def index_add_data():
         data = [request.args.get("adj", ""),request.args.get("n", ""), request.args.get(
             "p", ""), request.args.get("v", "")]
         op=1
-        print("正在輸入",data)
+        print("正在輸入")
         for x in range(3):
             if(data[x]==''):
                 op=0
                 print("NULL")
                 break
         if(op==1):
-            print("資料正在存入資料庫")
             t = D.DataBase()
             t.insert(data[0],data[1],data[2],data[3])
             return render_template("add_data.html", data=data)
