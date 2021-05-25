@@ -5,9 +5,9 @@ import psycopg2
 
 class DataBase():
     def __init__(self):
-        # self.DATABASE_URL = os.environ['DATABASE_URL']
+        #self.DATABASE_URL = os.environ['DATABASE_URL']
         #self.DATABASE_URL = os.popen('heroku config:get DATABASE_URL -a web-random-word').read()[:-1]
-        self.DATABASE_URL = "postgres://sgafwcetutioxn:86001140eaf543c917472994cec1e83bf7267f9f0ff0e45ade850bdae8e21ed0@ec2-3-214-136-47.compute-1.amazonaws.com:5432/de8cufkgcghn1l"
+        self.DATABASE_URL = "postgres: // sgafwcetutioxn: 86001140eaf543c917472994cec1e83bf7267f9f0ff0e45ade850bdae8e21ed0@ec2-3-214-136-47.compute-1.amazonaws.com: 5432/de8cufkgcghn1l"
         print(self.DATABASE_URL)
         self.db = psycopg2.connect(self.DATABASE_URL, sslmode='require')
         #self.db = pymysql.connect(host="127.0.0.1", user="fil12385ki", passwd="peter1421", db="fil12385ki",charset="utf8")
@@ -47,12 +47,11 @@ class DataBase():
     def close(self, do):
         self.db.cursor().execute(do)
         self.db.commit()
-
-# t = DataBase()
+t = DataBase()
 #t.creat_table()
 #t.insert('難過的','小明','房間','吃飯')
-# a=t.show_all()
-# print(a)
+a=t.show_all()
+print(a)
 # print
 
 # t.insert('d','dd','ddd')

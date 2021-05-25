@@ -47,8 +47,7 @@ class DataBase():
     def close(self, do):
         self.db.cursor().execute(do)
         self.db.commit()
-
-# t = DataBase()
+t = DataBase()
 #t.creat_table()
 #t.insert('難過的','小明','房間','吃飯')
 # a=t.show_all()

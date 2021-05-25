@@ -1,0 +1,2 @@
+heroku addons:create heroku-postgresql:hobby-dev
+heroku addons -a 你-APP-的名字 
