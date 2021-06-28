@@ -1,11 +1,13 @@
 from flask import Flask, request, render_template
 import D
 import random
+import ff as my_f
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
+    my_f.fun()
     return render_template("index.html")
 
 

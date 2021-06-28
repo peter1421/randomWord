@@ -2,3 +2,5 @@ flask
 PyMySQL
 psycopg2
 gunicorn
+requests
+bs4
