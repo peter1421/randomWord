@@ -1,1 +1,1 @@
-selectName
+/api/getAllData

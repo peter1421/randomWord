@@ -73,11 +73,17 @@ def deleteData(tableName, word):
     return query
 
 
+
 tableName = ["noun", "adjective", "verb", "place"]
 
 # # #t.creat_table()
 # t = DataBase()
-# t.fetchAll(getTable(tableName[0]))
+
+# a=t.fetchAll(getTable(tableName[0]))
+# print(a)
+
+# for row in a:
+#     print(row)
 # a=t.fetchAll(getTableCount(tableName[0]))
 # print(a[0])
 # t.executeQuery(addData(tableName[1], "熱情的"))
