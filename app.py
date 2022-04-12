@@ -1,13 +1,11 @@
 from flask import Flask, request, render_template
 import D
 import random
-import ff as my_f
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
-    my_f.fun()
     return render_template("index.html")
 
 
@@ -47,7 +45,7 @@ def index_show_data():
     return render_template("data_show.html",data=AllData,ls=ls)
 
 if __name__=="__main__":
-    app.run(port=3000)
+    app.run(port=3000,debug=True)
 
 
 # @app.route("/cal")
