@@ -1,5 +1,6 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template,redirect,url_for
 import D
+import database
 import random
 app = Flask(__name__)
 
@@ -8,7 +9,61 @@ app = Flask(__name__)
 def index():
     return render_template("nindex.html")
 
+## 待重構
+@app.route("/addData/adjective",methods=['POST'])
+def addData1():
+    try:
+        name="adjective"
+        word=request.form.get(name) 
+        print("input:{}".format(word))
+        t = database.DataBase()
+        t.executeQuery(database.addData(name, word))
+        return redirect("/")
+    except Exception as e:
+        data="錯誤原因:{}".format(str(e))
+        return render_template("erro.html",data=data)
+## 待重構
+@app.route("/addData/noun",methods=['POST'])
+def addData2():
+    try:
+        name="noun"
+        word=request.form.get(name) 
+        print("input:{}".format(word))
+        t = database.DataBase()
+        t.executeQuery(database.addData(name, word))
+        return redirect("/")
+    except Exception as e:
+        data="錯誤原因:{}".format(str(e))
+        return render_template("erro.html",data=data)
+## 待重構
+@app.route("/addData/verb",methods=['POST'])
+def addData3():
+    try:
+        name="verb"
+        word=request.form.get(name) 
+        print("input:{}".format(word))
+        t = database.DataBase()
+        t.executeQuery(database.addData(name, word))
+        return redirect("/")
+    except Exception as e:
+        data="錯誤原因:{}".format(str(e))
+        return render_template("erro.html",data=data)
+## 待重構
+@app.route("/addData/place",methods=['POST'])
+def addData4():
+    try:
+        name="place"
+        word=request.form.get(name) 
+        print("input:{}".format(word))
+        t = database.DataBase()
+        t.executeQuery(database.addData(name, word))
+        return redirect("/")
+    except Exception as e:
+        data="錯誤原因:{}".format(str(e))
+        return render_template("erro.html",data=data)
 
+
+    
 @app.route("/add_data")
 def index_add_data():
     try:
@@ -45,7 +100,7 @@ def index_show_data():
     return render_template("data_show.html",data=AllData,ls=ls)
 
 if __name__=="__main__":
-    app.run(port=3000)
+    app.run(port=3000,debug=True)
 
 
 # @app.route("/cal")

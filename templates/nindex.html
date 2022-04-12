@@ -67,32 +67,40 @@
         <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
         <div class="row">
             <div class="col-6 col-md-3">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="輸入名詞" aria-label="Recipient's username"
-                        aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">送出</button>
-                </div>
+                <form action="/addData/adjective" method='post'>
+                    <div class="input-group mb-3">
+                        <input type="text" name="adjective" class="form-control" placeholder="輸入形容詞" aria-label="Recipient's username"
+                            aria-describedby="button-addon1">
+                        <button class="btn btn-outline-secondary" type='submit' id="button-addon1">送出</button>
+                    </div>
+                </form>
             </div>
             <div class="col-6 col-md-3">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="輸入形容詞" aria-label="Recipient's username"
-                        aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">送出</button>
-                </div>
+                <form action="/addData/noun" method='post'>
+                    <div class="input-group mb-3">
+                        <input type="text" name="noun" class="form-control" placeholder="輸入名詞" aria-label="Recipient's username"
+                            aria-describedby="button-addon1">
+                        <button class="btn btn-outline-secondary" type='submit' id="button-addon1">送出</button>
+                    </div>
+                </form>
             </div>
             <div class="col-6 col-md-3">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="輸入動詞" aria-label="Recipient's username"
-                        aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon3">送出</button>
-                </div>
+                <form action="/addData/verb" method='post'>
+                    <div class="input-group mb-3">
+                        <input type="text" name="verb" class="form-control" placeholder="輸入動詞" aria-label="Recipient's username"
+                            aria-describedby="button-addon1">
+                        <button class="btn btn-outline-secondary" type='submit' id="button-addon1">送出</button>
+                    </div>
+                </form>
             </div>
             <div class="col-6 col-md-3">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="輸入地點" aria-label="Recipient's username"
-                        aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon4">送出</button>
-                </div>
+                <form action="/addData/place" method='post'>
+                    <div class="input-group mb-3">
+                        <input type="text" name="place" class="form-control" placeholder="輸入地點" aria-label="Recipient's username"
+                            aria-describedby="button-addon1">
+                        <button class="btn btn-outline-secondary" type='submit' id="button-addon1">送出</button>
+                    </div>
+                </form>
             </div>
         </div>
 
