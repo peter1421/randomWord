@@ -1,4 +1,0 @@
-gunicorn
-flask
-PyMySQL
-import random

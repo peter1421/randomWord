@@ -1,4 +1,0 @@
-Flask
-PyMySQL
-psycopg2
-gunicorn

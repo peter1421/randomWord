@@ -1,4 +1,0 @@
-try:
-    print("?")
-except:
-    print
