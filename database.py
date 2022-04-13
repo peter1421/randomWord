@@ -28,10 +28,10 @@ class DataBase():
         return table
 
     def executeQuery(self, query):
-            cur = self.db.cursor()
-            cur.execute(query)
-            print("執行成功")
-            self.db.commit()
+        cur = self.db.cursor()
+        cur.execute(query)
+        print("執行成功")
+        self.db.commit()
     # def Ndelete(self):
     #     cur = self.db.cursor()
     #     str = "DELETE FROM wordtable WHERE (noun, place) IN(SELECT noun, place FROM wordtable GROUP BY noun, place HAVING COUNT(*) > 1)"
@@ -73,9 +73,28 @@ def deleteData(tableName, word):
     return query
 
 
-
 tableName = ["noun", "adjective", "verb", "place"]
 
+
+def upData(table, word):
+    newWord = word+"的"
+    query = "UPDATE {} SET word = '{}' WHERE word = '{}'".format(
+        table, newWord, word)
+    showQuery(query)
+    return query
+
+
+def checkData():
+    t = DataBase()
+    table = t.fetchAll(getTable(tableName[1]))
+    for word in table:
+        if("的" not in word[1]):
+            try:
+                query = upData(tableName[1], word[1])
+                t.executeQuery(query)
+            except Exception as e:
+                print(e)
+checkData()
 # # #t.creat_table()
 # t = DataBase()
 

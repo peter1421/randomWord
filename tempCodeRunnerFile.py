@@ -1,1 +1,1 @@
-/api/getAllData
+checkData():
