@@ -32,112 +32,28 @@ def getAllData():
     print(data)
     return data
 
-
-@app.route("/addData/adjective", methods=['POST'])
-def addData1():
+@app.route("/addData/<wordType>", methods=['POST'])
+def addData(wordType):
     try:
-        name = "adjective"
-        word = request.form.get(name)
+        word = request.form.get(wordType)
         print("input:{}".format(word))
         if(check(word) == False):
             return render_template("erro.html", data="請確認輸入資料")
         t = database.DataBase()
-        t.executeQuery(database.addData(name, word))
-        return redirect("/")
-    except Exception as e:
-        data = "錯誤原因:{}".format(str(e))
-        return render_template("erro.html", data=data)
-# 待重構
-
-
-@app.route("/addData/noun", methods=['POST'])
-def addData2():
-    try:
-        name = "noun"
-        word = request.form.get(name)
-        if(check(word) == False):
-            return render_template("erro.html", data="請確認輸入資料")
-        print("input:{}".format(word))
-        t = database.DataBase()
-        t.executeQuery(database.addData(name, word))
-        return redirect("/")
-    except Exception as e:
-        data = "錯誤原因:{}".format(str(e))
-        return render_template("erro.html", data=data)
-# 待重構
-
-
-@app.route("/addData/verb", methods=['POST'])
-def addData3():
-    try:
-        name = "verb"
-        word = request.form.get(name)
-        if(check(word) == False):
-            return render_template("erro.html", data="請確認輸入資料")
-        print("input:{}".format(word))
-        t = database.DataBase()
-        t.executeQuery(database.addData(name, word))
-        return redirect("/")
-    except Exception as e:
-        data = "錯誤原因:{}".format(str(e))
-        return render_template("erro.html", data=data)
-# 待重構
-
-
-@app.route("/addData/place", methods=['POST'])
-def addData4():
-    try:
-        name = "place"
-        word = request.form.get(name)
-        if(check(word) == False):
-            return render_template("erro.html", data="請確認輸入資料")
-        print("input:{}".format(word))
-        t = database.DataBase()
-        t.executeQuery(database.addData(name, word))
+        t.executeQuery(database.addData(wordType, word))
         return redirect("/")
     except Exception as e:
         data = "錯誤原因:{}".format(str(e))
         return render_template("erro.html", data=data)
 
 
-@app.route("/showData/noun")
-def showDataNoun():
-    name = "noun"
+@app.route("/showData/<wordType>")
+def showDataNoun(wordType):
     labels = ["ID", "名詞"]
     t = database.DataBase()
-    data = t.fetchAll(database.getTable(name))
+    data = t.fetchAll(database.getTable(wordType))
     print(data)
-    return render_template("table.html", title=name, labels=labels, data=data)
-
-
-@app.route("/showData/adjective")
-def showDataAdjective():
-    name = "adjective"
-    labels = ["ID", "形容詞"]
-    t = database.DataBase()
-    data = t.fetchAll(database.getTable(name))
-    print(data)
-    return render_template("table.html", title=name, labels=labels, data=data)
-
-
-@app.route("/showData/verb")
-def showDataVerb():
-    name = "verb"
-    labels = ["ID", "動詞"]
-    t = database.DataBase()
-    data = t.fetchAll(database.getTable(name))
-    print(data)
-    return render_template("table.html", title=name, labels=labels, data=data)
-
-
-@app.route("/showData/place")
-def showDataPlace():
-    name = "place"
-    labels = ["ID", "地點"]
-    t = database.DataBase()
-    data = t.fetchAll(database.getTable(name))
-    print(data)
-    return render_template("table.html", title=name, labels=labels, data=data)
+    return render_template("table.html", title=wordType, labels=labels, data=data)
 
 
 # @app.route("/add_data")
@@ -177,7 +93,7 @@ def index_show_data():
 
 
 if __name__ == "__main__":
-    app.run(port=3000, debug=True)
+    app.run(port=30331, debug=True)
 
 
 # @app.route("/cal")
