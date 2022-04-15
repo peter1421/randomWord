@@ -94,7 +94,7 @@ def checkData():
                 t.executeQuery(query)
             except Exception as e:
                 print(e)
-checkData()
+# checkData()
 # # #t.creat_table()
 # t = DataBase()
 
