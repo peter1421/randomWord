@@ -1,10 +1,10 @@
 from flask import Flask, request, render_template, redirect, url_for
-import D
 import database
 import random
 import json
 tableName = ["noun", "adjective", "verb", "place"]
 
+app = Flask(__name__,static_folder='static', static_url_path='')
 
 def check(word):
     long = int(len(word))
@@ -15,7 +15,6 @@ def check(word):
         return True
 
 
-app = Flask(__name__)
 
 
 @app.route("/")
