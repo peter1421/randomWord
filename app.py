@@ -2,19 +2,17 @@ from flask import Flask, request, render_template, redirect, url_for
 import database
 import random
 import json
+import os
 tableName = ["noun", "adjective", "verb", "place"]
 
 app = Flask(__name__,static_folder='static', static_url_path='')
 
 def check(word):
     long = int(len(word))
-    print(long)
-    if(long <= 0 or long > 10 or word == ' '):
+    if(long <= 0 or long > 10 or word == ' ' or '1=1' in word):
         return False
     else:
         return True
-
-
 
 
 @app.route("/")
@@ -28,7 +26,7 @@ def getAllData():
     data = {}
     for name in tableName:
         data[name] = t.fetchAll(database.getTable(name))
-    print(data)
+    # print(data)
     return data
 
 @app.route("/addData/<wordType>", methods=['POST'])
@@ -48,23 +46,11 @@ def addData(wordType):
 
 @app.route("/showData/<wordType>")
 def showDataNoun(wordType):
-    labels = ["ID", "名詞"]
+    labels = ["ID", wordType]
     t = database.DataBase()
     data = t.fetchAll(database.getTable(wordType))
     print(data)
     return render_template("table.html", title=wordType, labels=labels, data=data)
-
-
-@app.route("/show_data")
-def index_show_data():
-    t = D.DataBase()
-    AllData = t.show_all()
-    print(AllData)
-    ls = []
-    for x in range(4):
-        ls.append(random.randint(0, len(AllData)-1))
-    print(ls)
-    return render_template("data_show.html", data=AllData, ls=ls)
 
 
 if __name__ == "__main__":
