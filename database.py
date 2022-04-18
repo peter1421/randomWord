@@ -99,9 +99,18 @@ def checkData():
                 t.executeQuery(query)
             except Exception as e:
                 print(e)
+
+def deleteFailWord(tableName,deleteWord):
+    query = "DELETE  FROM {} where position('{}' in word)>0 ".format(tableName,deleteWord)
+    showQuery(query)
+    return query
+
+# t = DataBase()
+# a=t.executeQuery(deleteFailWord(tableName[0],"張駿逸"))
+
+
 # checkData()
 # # #t.creat_table()
-# t = DataBase()
 
 # a=t.fetchAll(getTable(tableName[0]))
 # print(a)
