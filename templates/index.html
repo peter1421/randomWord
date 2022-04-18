@@ -14,6 +14,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1W7SJXMPCF"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -21,7 +22,7 @@
         gtag('config', 'G-1W7SJXMPCF');
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8014746540373457"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <title>隨機句子生成</title>
 </head>
 
@@ -38,7 +39,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -102,6 +102,135 @@
                     </div>
                 </div>
             </center>
+        </div>
+        <div class="row" style="text-align:center">
+            <div class="row">
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <p>瀏覽資料區</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        可檢視目前資料 <cite title="Source Title">鎖定模式待更新</cite>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-6 col-md-3">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample1" aria-controls="offcanvasExample1">
+                    形容詞資料
+                </button>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample1"
+                    aria-labelledby="offcanvasExampleLabel" style="text-align:left">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">資料互動功能</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div>
+                            1.檢視所有資料
+                            
+                            2.鎖定資料
+                            3.資料評分
+                        </div>
+                        <div class="dropdown mt-3">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" id="adjectiveData" onclick="addDataList('adjective')">
+                                點我觀看
+                            </button>
+                            <ul class="dropdown-menu" id="adjectiveList" aria-labelledby="dropdownMenuButton">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample2" aria-controls="offcanvasExample2">
+                    名詞資料
+                </button>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample2"
+                    aria-labelledby="offcanvasExampleLabel2" style="text-align:left">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel2">資料互動功能</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div>
+                            1.檢視所有資料
+                            2.鎖定資料
+                            3.資料評分
+                        </div>
+                        <div class="dropdown mt-3">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" id="nounData" onclick="addDataList('noun')">
+                                點我觀看
+                            </button>
+                            <ul class="dropdown-menu" id="nounList" aria-labelledby="dropdownMenuButton">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample3" aria-controls="offcanvasExample3">
+                    動詞資料
+                </button>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample3"
+                    aria-labelledby="offcanvasExampleLabe3" style="text-align:left">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabe3">資料互動功能</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div>
+                            1.檢視所有資料
+                            2.鎖定資料
+                            3.資料評分
+                        </div>
+                        <div class="dropdown mt-3">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" id="verbeData" onclick="addDataList('verb')">
+                                點我觀看
+                            </button>
+                            <ul class="dropdown-menu" id="verbList" aria-labelledby="dropdownMenuButton">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample4" aria-controls="offcanvasExample4">
+                    地點資料
+                </button>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample4"
+                    aria-labelledby="offcanvasExampleLabel4" style="text-align:left">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">資料互動功能</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div>
+                            1.檢視所有資料
+                            2.鎖定資料
+                            3.資料評分
+                        </div>
+                        <div class="dropdown mt-3">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" id="placeData" onclick="addDataList('place')">
+                                點我觀看
+                            </button>
+                            <ul class="dropdown-menu" id="placeList" aria-labelledby="dropdownMenuButton">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- Stack the columns on mobile by making one full-width and the other half-width -->
         <!-- <div class="row">
@@ -196,69 +325,16 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- 自定義 Js -->
+<script src="js/apiFunction.js" type="text/javascript"></script>
+<script src="js/tool.js" type="text/javascript"></script>
 <script>
     let response;
-
-
-
-    function makeRequest(url) {
-        xhr = new XMLHttpRequest();
-        xhr.onload = function () {
-            response = JSON.parse(this.response);
-            console.log(response)
-            $("#getRandomWord").text("已取得資料").removeAttr("disabled");;
-        };
-        xhr.open("GET", url, true);
-        xhr.send();
-    }
-
-    function getRandom(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    };
-
-
-    function getRandomWord() {
-        let sentence = ""
-        for (const key in response) {
-            if (key == "place") {
-                sentence += "在"
-            }
-            // console.log(key, response[key]);
-            // console.log(response[key].length)
-            R = getRandom(0, response[key].length - 1)
-            // console.log(R)
-            // console.log(response[key][R][1])
-            sentence += response[key][R][1]
-        }
-        console.log(sentence)
-        var s = document.getElementById("sentence");
-        s.innerHTML = sentence;
-    }
-
-
-
-    function disabledSubmitButton02(submitButtonName, submitButtonText) {
-        $("#" + submitButtonName).attr({
-            "disabled": "disabled"
-        }); //控制按钮为禁用
-        var second = 3;
-        var intervalObj = setInterval(function () {
-            $("#" + submitButtonName).text(submitButtonText + "(" + second + ")");
-            if (second == 0) {
-                $("#" + submitButtonName).text(submitButtonText);
-                $("#" + submitButtonName).removeAttr("disabled"); //将按钮可用
-                /* 清除已设置的setInterval对象 */
-                clearInterval(intervalObj);
-            }
-            second--;
-        }, 1000);
-    }
     $(document).ready(function () {
         console.log("ready!!!!");
         $("#getRandomWord").text("等待資料中").attr({
             "disabled": "disabled"
         });
-        // disabledSubmitButton02("getRandomWord","等待資料中")
         try {
             makeRequest("/api/getAllData")
         } catch (e) {
@@ -282,8 +358,23 @@
         // alert("已複製好，可貼粘。");
     }
 
-    function story() {
-        str =
-            "今天，動物們要舉行一次有趣的跑步比賽，他們請來了老牛作裁判，比賽前，老牛宣佈比賽規則：動物們必須戴上由自己喜歡的食物做成的項鍊參加比賽，誰能夠戴着項鍊跑到終點就能取得勝利。小猴、公雞、小狗和小貓都戴上了各自喜歡的食物項鍊精神抖擻地站在起跑線上，信心百倍地準備比賽。隨着老牛的一聲令響，動物們撒開腿向前跑去，沒跑多遠，小猴盯着桃子項鍊抓耳撓腮，差點兒摔了一跤；公雞將項鍊上的玉米數了一遍又一遍，越數心越癢；肉骨頭項鍊被小狗的口水弄得濕漉漉的了；香香的魚乾引得小貓不停地叫喚。這可怎麼辦呢？小猴看了看旁邊的公雞，想出了一個好辦法，他急忙叫住公雞，提出交換項鍊後繼續跑；小狗實在忍不住了，就停下來吃起了肉骨頭項鍊了，小貓看見了他們。心裏想：“我不能象他們那樣饞嘴，我一定要堅持到底，取得勝利。”小狗吃完了肉骨頭項鍊，很快就第一個衝到了終點；隨後小猴、小貓、公雞都先後到達終點，小狗認為他是冠軍，可是其他動物都不同意，最後老牛裁判説：“今天我們進行的可不是普通的賽跑，而是毅力賽跑，只有戴着自己的項鍊跑到終點的才能獲得冠軍，請大家檢查一下項鍊。”小狗難為情地低下了頭；小猴也紅着臉説：“我的項鍊不是我自己的...”老牛裁判接着説：“小貓在比賽中碰到困難後能夠堅持到底，小貓獲得了這次比賽的冠軍！”"
+    function addDataList(wordType) {
+        try {
+            id = "#" + wordType + "List"
+            $(id).empty();
+            let html = '';
+            for (var i = 0; i < response[wordType].length; i++) {
+                console.log(response[wordType][i][1])
+                html += '<li><a class="dropdown-item" href="#" value="' + response[wordType][i][1] + '">' + response[
+                    wordType][i][1] + '</a></li>';
+            }
+            $(id).append(html);
+        }catch{
+            alert("發生錯誤，請稍後再試")
+        }
+
     }
+    // <li><a class="dropdown-item" href="#">Action</a></li>
+    //                             <li><a class="dropdown-item" href="#">Another action</a></li>
+    //                             <li><a class="dropdown-item" href="#">Something else here</a></li>
 </script>

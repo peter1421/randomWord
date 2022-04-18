@@ -1,21 +1,18 @@
 from flask import Flask, request, render_template, redirect, url_for
-import D
 import database
 import random
 import json
+import os
 tableName = ["noun", "adjective", "verb", "place"]
 
+app = Flask(__name__,static_folder='static', static_url_path='')
 
 def check(word):
     long = int(len(word))
-    print(long)
-    if(long <= 0 or long > 10 or word == ' '):
+    if(long <= 0 or long > 10 or word == ' ' or '1=1' in word):
         return False
     else:
         return True
-
-
-app = Flask(__name__)
 
 
 @app.route("/")
@@ -29,7 +26,7 @@ def getAllData():
     data = {}
     for name in tableName:
         data[name] = t.fetchAll(database.getTable(name))
-    print(data)
+    # print(data)
     return data
 
 @app.route("/addData/<wordType>", methods=['POST'])
@@ -49,68 +46,13 @@ def addData(wordType):
 
 @app.route("/showData/<wordType>")
 def showDataNoun(wordType):
-    labels = ["ID", "名詞"]
+    labels = ["ID", wordType]
     t = database.DataBase()
     data = t.fetchAll(database.getTable(wordType))
     print(data)
     return render_template("table.html", title=wordType, labels=labels, data=data)
 
 
-# @app.route("/add_data")
-# def index_add_data():
-#     try:
-#         data = [request.args.get("adj", ""), request.args.get("n", ""), request.args.get(
-#             "p", ""), request.args.get("v", "")]
-#         op = 1
-#         print("正在輸入", data)
-#         for x in range(3):
-#             if(data[x] == ''):
-#                 op = 0
-#                 print("NULL")
-#                 break
-#         if(op == 1):
-#             print("資料正在存入資料庫")
-#             t = D.DataBase()
-#             t.insert(data[0], data[1], data[2], data[3])
-#             a = D.DataBase()
-#             a.Ndelete()
-#             return render_template("add_data.html", data=data)
-#     except:
-#         data = "fuck"
-#     return render_template("erro.html")
-
-
-@app.route("/show_data")
-def index_show_data():
-    t = D.DataBase()
-    AllData = t.show_all()
-    print(AllData)
-    ls = []
-    for x in range(4):
-        ls.append(random.randint(0, len(AllData)-1))
-    print(ls)
-    return render_template("data_show.html", data=AllData, ls=ls)
-
-
 if __name__ == "__main__":
     app.run(port=30331, debug=True)
 
-
-# @app.route("/cal")
-# def index_c():
-#     max = int(request.args.get("max", ""))
-#     result = 0
-#     for x in range(1, max+1):
-#         result += x
-#     return render_template("result.html", data=result)
-
-
-# @app.route("/show")
-# def index_s():
-#     name = request.args.get("n", "")
-#     return "歡迎"+name
-
-
-# @app.route("/page")
-# def index_p():
-#     return render_template("page.html")

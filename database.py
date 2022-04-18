@@ -1,16 +1,21 @@
 import pymysql
 import os
 import psycopg2
-
+import configparser
 
 class DataBase():
     def __init__(self):
         # self.DATABASE_URL = os.environ['DATABASE_URL']
         # self.DATABASE_URL = os.popen('heroku config:get DATABASE_URL -a web-random-word').read()[:-1]
-        self.DATABASE_URL = "postgres://igaqndvvmcjcfa:cd54493aba06179ad55e8885c11234ec1bd076944e1e29adc2be021626e9d27d@ec2-34-192-210-139.compute-1.amazonaws.com:5432/d3gp88n44ktg7e"
-        print("連線至:"+self.DATABASE_URL)
-        self.db = psycopg2.connect(self.DATABASE_URL, sslmode='require')
-        print("連線成功")
+        try:
+            config = configparser.ConfigParser()
+            config.read('config.ini')
+            self.DATABASE_URL=config.get('DataBase', 'DATABASE_URL')
+            print("連線至:"+self.DATABASE_URL)
+            self.db = psycopg2.connect(self.DATABASE_URL, sslmode='require')
+            print("連線成功")
+        except Exception as e:
+                print("連線失敗:"+e)
 
     # def fetchC(self, query):
     #     cur = self.db.cursor()
@@ -94,9 +99,18 @@ def checkData():
                 t.executeQuery(query)
             except Exception as e:
                 print(e)
+
+def deleteFailWord(tableName,deleteWord):
+    query = "DELETE  FROM {} where position('{}' in word)>0 ".format(tableName,deleteWord)
+    showQuery(query)
+    return query
+
+# t = DataBase()
+# a=t.executeQuery(deleteFailWord(tableName[0],"張駿逸"))
+
+
 # checkData()
 # # #t.creat_table()
-# t = DataBase()
 
 # a=t.fetchAll(getTable(tableName[0]))
 # print(a)
