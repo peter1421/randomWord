@@ -106,7 +106,7 @@ def deleteFailWord(tableName,deleteWord):
     return query
 
 # t = DataBase()
-# a=t.executeQuery(deleteFailWord(tableName[0],"張駿逸"))
+# a=t.executeQuery(deleteFailWord(tableName[3],"在"))
 
 
 # checkData()

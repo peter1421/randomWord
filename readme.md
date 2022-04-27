@@ -1,37 +1,41 @@
-## 隨機句子產生器
+## [隨機句子產生器 1.0.0](https://random-word0412.herokuapp.com/)
 ### 說明:
 網站的資料庫充滿了不同的名詞 動詞 形容詞
 會隨機組合成一個句子
+![](https://i.imgur.com/9FkP7fQ.png)
 
 使用者能資料庫自行添加想要的詞彙
 讓下一個人組合句子的時候加到你創造的詞
-![](https://i.imgur.com/0oMXTQP.png)
 
-目前資料庫內已達破千資料
-![](https://i.imgur.com/YqtyDQv.png)
+
+![](https://i.imgur.com/0oMXTQP.png)
 
 其實玩法很簡單 試看看就知道了
 
-### 連結:https://reurl.cc/6aVr1r
-(維護中 等我期末完再更新)
+[網站連結](https://random-word0412.herokuapp.com/)
 
 
 ### 使用示範:
-* 1.添加資料(不能留空 也不能輸太長的字 防出事)
-![](https://i.imgur.com/NO6lZMc.png)
-* 2.秀出隨機組合
-![](https://i.imgur.com/MbaKgpW.png)
+#### 抽出顯示結果
+* 目前形式較單一，將開放故事模式
+![](https://i.imgur.com/9FkP7fQ.png)
+#### 瀏覽/鎖定目前資料
+* 1.確定瀏覽的詞性
+* 2.點選瀏覽所有資料
+![](https://i.imgur.com/Y7fOCLt.png)
+* 3.點擊鎖定資料
+![](https://i.imgur.com/E0O4rau.png)
+#### 添加資料
+![](https://i.imgur.com/Lz2mTpp.png)
 
-### 後續開發:
-第一次正式用flask開發網站
-因為還沒學前端 所以網站很簡陋
-應該會融合之前的LINEBOT
-然後句子的變化會更多
-學了機器學習和文字分析
-也會盡量試試分辨詞和過濾
-等我期末玩再開發1.0八
+### 其他
+#### 預定更新
+* 故事模式
+* 評分(高分的資料會留到下輪繼續使用)
+* 其他除錯
+* 有想法也可給建議
+#### 推廣-[場外文字分析LineBot](https://github.com/peter1421/linebot_wordpic)
+![](https://i.imgur.com/Q6IxP7E.png)
 
-### 推廣:
-另外推廣前幾天做的小工具
-複製場外網址 就會跳出那串文字分析結果
-https://forum.gamer.com.tw/C.php?bsn=60076&snA=6345493
+* LineID:@564ieixb
+* 使用方法:加上面好友，輸入場外文章網址即可使用
